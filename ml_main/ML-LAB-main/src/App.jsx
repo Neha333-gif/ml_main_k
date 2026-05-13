@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
@@ -9,11 +9,11 @@ import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
   return (
-    <BrowserRouter basename="/ml_main_k">
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="index.html" element={<Home />} />
+          <Route path="index.html" element={<Navigate replace to="/" />} />
           <Route path="about" element={<About />} />
           <Route path="services" element={<Services />} />
           <Route path="careers" element={<Careers />} />
