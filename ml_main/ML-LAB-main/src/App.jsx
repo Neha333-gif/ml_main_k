@@ -9,7 +9,7 @@ import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/ml_main_k">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
